@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List main</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Need to add a manifest.json file to change name of webapp etc -->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!-- Meta tag is used to define metadata. Metadata is information about data. For example, it tells the browser how to display content etc -->
+    <meta name="apple-mobile-web-app-capable" content="yes">  <!-- Tells browser web application is capable of running in full screen mode -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- Makes status bar black. I think it blends with the notch for iphone-->
+    <meta name="apple-mobile-web-app-title" content="Shopping list login"> <!-- This is the title of the web application  -->
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <style>
+        .font-style{
+            font-family: Roboto;
+        }
+        
+    </style>
+</head>
+<body class = 'font-style' style = "background-color: rgb(162, 195, 238);">
+    <div style = "color: azure; 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;" >
+
+        <div style ="font-size: 30px; 
+        background-color: rgb(227, 59, 115); 
+        border-radius: 10px; 
+        padding: 5px;
+        width: 250px;"> 
+        Shopping list main
+        </div>
+        
+        <div style = "font-size: 20px; 
+        background-color: rgb(227, 59, 115); 
+        border-radius: 10px;
+        height: auto; 
+        padding: 5px;
+        width: auto;
+        ">
+           <a href="./completedItems.html" style="color: azure; text-decoration: solid;">Bill Page</a> 
+        </div>
+    </div>
+
+    <div style = "width: 600px;
+    height: 200px; 
+    background-color: azure;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto ;
+    font-size: 30px;
+    border-radius: 12px;
+    border: 10px;
+    padding: 5px;">
+    <b>Item to add </b>
+
+        <div style = "font-size: 20px; margin-top: 10px;">
+            <div style="display: flex; align-items: center; height: 50px;">
+            <label for = "itemName" style = "width: 150px; text-align: left;"> item :  </label >  
+            <input  type="text" id="itemName">
+            <span id="ItemNameMsg" style = "color: red; font-size: 14px; display: none; margin-left: 10px;">Item name is required</span>
+            </div>
+        </div>
+
+        <div style = "font-size: 20px; margin-top: 10px;">
+            <div style="display: flex; align-items: center; height: 50px">
+            <label for = "itemDescription" style = "width: 150px; text-align: left;"> description: </label >
+            <input  type="text" id="itemDescription">
+            </div>
+        </div>
+
+        <div style = "
+            margin-left: 450px;
+            margin-right: auto;
+            margin-top: 5px ;">
+                <button type = "button" style = " background-color: rgb(227, 59, 115);
+                border-radius: 12px;
+                width: 150px;
+                height: 30px; 
+                border: white;
+                font-size: medium;
+                color: azure;
+                "
+                onclick="return addItem()">
+                <b> Add Item </b>
+            </button>
+        </div>
+
+        <div id = "itemHeading" style = "margin-top: 100px; 
+        width: 600px;
+        height: 50px; 
+        background-color: azure;
+        border-radius: 15px;
+        text-align: center;
+        vertical-align: middle;"> 
+            <h4> Items to buy </h4>
+        </div>
+       
+    
+    </div>
+    <script src = "../node_modules/axios/dist/axios.js"> </script>
+    <script src="../JavaScript/main.js"></script>
+</body>
+</html>

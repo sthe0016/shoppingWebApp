@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list login</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- Need to add a manifest.json file to change name of webapp etc -->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!-- Meta tag is used to define metadata. Metadata is information about data. For example, it tells the browser how to display content etc -->
+    <meta name="apple-mobile-web-app-capable" content="yes">  <!-- Tells browser web application is capable of running in full screen mode -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- Makes status bar black. I think it blends with the notch for iphone-->
+    <meta name="apple-mobile-web-app-title" content="Shopping list login"> <!-- This is the title of the web application  -->
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <style>
+        .font-style{
+            font-family: Roboto;
+        }
+        
+    </style>
+
+</head>
+
+<body class = 'font-style' style = "background-color: rgb(131, 169, 220);">
+    <div style = "color: azure; 
+    font-size: 30px; 
+    background-color: rgb(198, 47, 97); 
+    border-radius: 10px; 
+    padding: 5px;
+    width: 250px;" >
+        Shopping list login
+    </div>
+    <div style = "width: 600px;
+    height: 200px; 
+    background-color: azure;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px ;
+    font-size: 30px;
+    border-radius: 12px;
+    border: 10px;
+    padding: 5px;">
+        User
+    
+    <div style = "margin-left: 200px;
+    margin-right: auto;
+    margin-top: 30px ;"> 
+        <input  type="text" id="userName">
+    </div >
+
+    <div style = "
+    margin-left: 200px;
+    margin-right: auto;
+    margin-top: 30px ;">
+        <button style = " background-color: rgb(199, 47, 98);
+        border-radius: 12px;
+        width: 80px;
+        height: 30px; 
+        border: burlywood;
+        font-size: medium;
+        color: azure;
+        "
+         onclick="return checkUser()">
+          <b> Search </b>
+      </button>
+    </div>
+
+    </div>
+
+    <script src="../JavaScript/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Sheet</title>
+</head>
+<body style="background-color: rgb(162, 195, 238);">
+    <div style = " 
+    color: azure; 
+    font-size: 30px; 
+    background-color: rgb(227, 59, 115); 
+    border-radius: 10px; 
+    padding: 5px;
+    width: auto;
+    text-align: center;">
+    Bill Sheet
+    </div>
+
+    <div style = "font-size: 20px; 
+        margin-top: 20px;
+        background-color: rgb(227, 59, 115); 
+        border-radius: 10px;
+        height: auto; 
+        padding: 5px;
+        width: 90px;
+        ">
+           <a href="./main.html" style="color: azure; text-decoration: solid;">Main Page</a> 
+        </div>
+
+    <div id = "completedBills" style = "margin-top: 70px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 600px;
+    height: 50px; 
+    background-color: azure;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    "> 
+            <h2> Completed Bills </h2>
+    </div>
+    
+    <div id = "completedBillsDisplay" style = "display: flex; flex-direction: column;"> </div>
+    
+
+    <script src = "../node_modules/axios/dist/axios.js"> </script>
+    <script src="../JavaScript/completed.js"> </script>
+    
+</body>
+</html>
