@@ -7,6 +7,6 @@ function checkUser()
     }
     else{
         window.localStorage.setItem("userName", userNameValue)
-        window.location = "main.html"
+        window.location = "./html/main.html"
     }
 }
