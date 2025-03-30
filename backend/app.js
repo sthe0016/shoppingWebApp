@@ -20,7 +20,8 @@ const start = async () => {
 
 start()
 
-const allowedOrigins = ["https://localhost:3000", "https://shopping-web-app-frontend.vercel.app/"] // this is used for CORS to specify the different hosts that can request for data
+const allowedOrigins = ["https://localhost:3000", 
+    "https://shopping-web-app-frontend.vercel.app"] // this is used for CORS to specify the different hosts that can request for data
 
 app.use(cors(
     {
