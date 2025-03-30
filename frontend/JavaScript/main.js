@@ -1,4 +1,4 @@
-BASE_URL = "http://localhost:3000/api/v1/items"
+BASE_URL = "https://shopping-web-server.vercel.app/"
 
 const addItem = async () => {
     try {
