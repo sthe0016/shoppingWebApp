@@ -1,3 +1,5 @@
+BASE_URL = "http://localhost:3000/api/v1/items"
+
 const addItem = async () => {
     try {
         let itemNameValue = document.getElementById("itemName").value
@@ -10,7 +12,7 @@ const addItem = async () => {
         }
         else{
             if (itemDescriptionValue === ""){
-                await axios.post('http://localhost:3000/api/v1/items', 
+                await axios.post(`${BASE_URL}`, 
                     {
                         "name": itemNameValue,
                         "user": user                
@@ -19,7 +21,7 @@ const addItem = async () => {
 
             }
             else{
-                await axios.post('http://localhost:3000/api/v1/items', 
+                await axios.post(`${BASE_URL}`, 
                     {
                         "name": itemNameValue,
                         "description": itemDescriptionValue,
@@ -41,7 +43,7 @@ async function showItems(){
     let itemsExist = false
 
     try {
-        const {data: {allItems}} = await axios.get('http://localhost:3000/api/v1/items')
+        const {data: {allItems}} = await axios.get(`${BASE_URL}`)
         if (allItems.length > 0){
             itemsExist = true 
         } else {
@@ -128,7 +130,7 @@ async function showItems(){
 
 async function deleteItem(itemID){
     try{
-        await axios.delete(`http://localhost:3000/api/v1/items/${itemID}`)
+        await axios.delete(`${BASE_URL}/${itemID}`)
     }
     catch (error){
         console.log(error)
@@ -168,7 +170,7 @@ async function createBill() {
             if (checkbox.checked){
                 anyChecked = true
                 itemID = checkbox.value                 
-                const {data: {item: {name}}} = await axios.get(`http://localhost:3000/api/v1/items/${itemID}`)
+                const {data: {item: {name}}} = await axios.get(`${BASE_URL}/${itemID}`)
                 completedItemsArr.push({"name": name}) 
                 completedItemsIDs.push(itemID)  // remember the item id's that have been selected 
             }
@@ -197,7 +199,7 @@ async function createBill() {
             const monthStr = date.getMonth() + 1  // month is 0 based indexing so we do + 1 
             const yearStr = date.getFullYear()
             dateStr = `${dayStr}/${monthStr}/${yearStr}`
-            await axios.post(`http://localhost:3000/api/v1/items/completed`,
+            await axios.post(`${BASE_URL}/completed`,
                 {
                     "items": completedItemsArr,
                     "date": dateStr, 

@@ -1,3 +1,5 @@
+BASE_URL = "http://localhost:3000/api/v1/items"
+
 async function showCompleted(){
     completedBillsDisplay = document.getElementById("completedBillsDisplay")
     try{
@@ -7,7 +9,7 @@ async function showCompleted(){
         let items = []
         let id = ''
         let user = ''
-        const {data : {allcompleted}} = await axios.get("http://localhost:3000/api/v1/items/completed")
+        const {data : {allcompleted}} = await axios.get(`${BASE_URL}/completed`)
         allcompleted.forEach(
             (completedSet) => {
             const newDiv = document.createElement('div');
@@ -106,7 +108,7 @@ async function deleteBill(){
         if(checkbox.checked){
             anyChecked = true 
             setID = checkbox.value
-            await axios.delete(`http://localhost:3000/api/v1/items/completed/${setID}`)
+            await axios.delete(`${BASE_URL}/completed/${setID}`)
             location.reload()
         }
     }

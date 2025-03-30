@@ -1,10 +1,12 @@
+BASE_URL = "http://localhost:3000/api/v1/items"
+
 async function showItem() {
     try{
         itemId = localStorage.getItem("itemID")
         userName = document.getElementById("userName")
         itemName = document.getElementById("itemName")
         itemDescription = document.getElementById("itemDescription")
-        const {data: {item}} = await axios.get(`http://localhost:3000/api/v1/items/${itemId}`)
+        const {data: {item}} = await axios.get(`${BASE_URL}/${itemId}`)
         userName.value = item.user
         itemName.value = item.name
         itemDescription.value = item.description
@@ -27,7 +29,7 @@ async function editItem(){
         else{
             errorMsg.style.display = "none";    // This hides the error message
             if (itemDescriptionValue === ""){
-                await axios.patch(`http://localhost:3000/api/v1/items/${itemId}`,
+                await axios.patch(`${BASE_URL}/${itemId}`,
                     {
                         "name": itemNameValue,
                         "user": newUser
@@ -35,7 +37,7 @@ async function editItem(){
                 )
             }
             else{
-                await axios.patch(`http://localhost:3000/api/v1/items/${itemId}`,
+                await axios.patch(`${BASE_URL}/${itemId}`,
                     {
                         "name": itemNameValue,
                         "description": itemDescriptionValue,
