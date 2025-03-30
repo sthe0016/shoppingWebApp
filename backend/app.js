@@ -20,7 +20,15 @@ const start = async () => {
 
 start()
 
-app.use(cors())  // allows any source to request for data. CORS is a security system that blocks requests from places unless it is allowed by server
+const allowedOrigins = ["https://localhost:3000"] // this is used for CORS to specify the different hosts that can request for data
+
+app.use(cors(
+    {
+        origin: allowedOrigins,
+        methods: ["GET", "POST", "PATCH", "DELETE"],
+        credentials: true 
+    }
+))  // allows any source to request for data. CORS is a security system that blocks requests from places unless it is allowed by server
 app.use(express.json())  // this is another middleware that makes sure that we get JSON data in the request body. It allows our server to parse incoming requests with JSON payloads. 
 
 app.use('/api/v1/items', items)  // All URLs with starting address of /api/v1/tasks will use the items router as middleware. 
