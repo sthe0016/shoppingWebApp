@@ -138,7 +138,7 @@ async function deleteItem(itemID){
 }
 
 // all the view and delete buttons are added as children to the div section with id itemHeading. Thus, if we add an event listener to this parent element. It will apply to the child elements too 
-document.getElementById("itemHeading").addEventListener('click', (e) => { 
+document.getElementById("itemHeading").addEventListener('click', async (e) => { 
     if (e.target.classList.contains('view')){ // functionality for the edit button
         id = e.target.dataset.id  // stored in the data element of the button
         console.log(`view button pressed and data id is ${e.target.dataset.id}`)
@@ -148,8 +148,14 @@ document.getElementById("itemHeading").addEventListener('click', (e) => {
     else if (e.target.classList.contains('del')){ // functionality for the delete button
         id = e.target.dataset.id  // stored in the data element of the button
         console.log(`delete button pressed and data id is ${e.target.dataset.id}`)
-        deleteItem(id)
-        location.reload();
+        try{
+            await deleteItem(id);  // wait till this has finished executing. 
+            location.reload();  // only reload the page once the item is deleted. 
+        }
+        catch(e){
+            console.log(e)
+        }
+        
     }
 }
 )
