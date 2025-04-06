@@ -1,14 +1,30 @@
-body.index-page{
+body.common-body{
     background-color: rgb(11, 112, 244);
     font-family: Roboto;
 }
 .page-title{  
-    font-size: 185%;
+    font-size: 1.85rem;
     color: azure;
-    background-color: rgb(198, 47, 97);
-    border-radius: 1vw; 
-    padding: 0.4vw;
-    width: 13.7vw;
+    background-color: rgb(227, 59, 115);
+    border-radius: 1rem; 
+    padding: 0.4rem 0.8rem;
+    width: fit-content;
+    text-align: center;
 }
 
-        /* applies the style "page-title" only if its a child inside parent class of "index-page"*/
+.index-login{
+    width: 30vw;
+    height: 22vh; 
+    background-color: azure;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    font-size: 1.9rem;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.5%;
+}
+
+
+
+/*if we do .index-page .page-title {....}, it applies the style "page-title" only if its a child inside parent class of "index-page"*/
