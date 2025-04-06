@@ -25,6 +25,21 @@ body.common-body{
     padding: 0.5%;
 }
 
+@media(max-width: 500px) {
+    .index-login{
+        width: 400px;
+        height: 200px; 
+        background-color: azure;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20vh;
+        font-size: 1.9rem;
+        font-weight: bold;
+        border-radius: 1rem;
+        padding: 0.5%;
+    }
+    
+}
 
 
 /*if we do .index-page .page-title {....}, it applies the style "page-title" only if its a child inside parent class of "index-page"*/
