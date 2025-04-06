@@ -13,8 +13,8 @@ body.common-body{
 }
 
 .index-login{
-    width: 30vw;
-    height: 22vh; 
+    width: 400px;
+    height: 18vh; 
     background-color: azure;
     margin-left: auto;
     margin-right: auto;
@@ -25,18 +25,31 @@ body.common-body{
     padding: 0.5%;
 }
 
-@media(max-width: 500px) {
+.index-login .search-input-style{
+    margin-left: 30%;
+    margin-top: 5% ;
+}
+
+.index-login .search-button-style{
+    background-color: rgb(227, 59, 115);
+    margin-left: 30%;
+    margin-top: 7% ;
+    border-radius: 1rem;
+    width: 80px;
+    height: 30px; 
+    border: burlywood;
+    font-size: medium;
+    color: azure;
+}
+
+
+
+@media(min-width: 1300px) {
     .index-login{
-        width: 400px;
-        height: 200px; 
+        width: 30vw;
+        height: 22vh; 
         background-color: azure;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20vh;
-        font-size: 1.9rem;
-        font-weight: bold;
-        border-radius: 1rem;
-        padding: 0.5%;
+        font-size: 2.3rem;
     }
     
 }
