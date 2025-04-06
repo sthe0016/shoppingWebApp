@@ -78,7 +78,7 @@ async function showItems(){
         displayItems.appendChild(newDiv)
         }
     )
-    if (itemsExist){
+    if (itemsExist){  // This section of html displays the option to type the name of the User buying the items and the amount of the total bill.
         const twoTextField = document.createElement('div')
         twoTextField.innerHTML = `
                 <div style = "font-size: 20px; margin-top: 100px; margin-left: 220px">

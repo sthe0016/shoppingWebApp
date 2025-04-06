@@ -1,3 +1,6 @@
+/* Common meaning of code:*/
+/*if we do .PARENT-TAG .CHILD-TAG {....}, it applies the style "CHILD-TAG" only if its a child inside parent class of "PARENT-TAG"*/
+
 body.common-body{
     background-color: rgb(11, 112, 244);
     font-family: Roboto;
@@ -7,14 +10,25 @@ body.common-body{
     color: azure;
     background-color: rgb(227, 59, 115);
     border-radius: 1rem; 
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 0.8rem; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
     width: fit-content;
     text-align: center;
 }
 
+.mini-page-title{
+    font-size: 1.2rem;
+    color: azure;
+    background-color: rgb(227, 59, 115);
+    border-radius: 1rem; 
+    padding: 0.2rem 0.8rem; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
+    width: fit-content;
+    text-align: center;
+
+}
+
 .index-login{
     width: 400px;
-    height: 18vh; 
+    height: 20vh; 
     background-color: azure;
     margin-left: auto;
     margin-right: auto;
@@ -42,17 +56,78 @@ body.common-body{
     color: azure;
 }
 
+.main-add-item{
+    width: 400px;
+    height: 200px; 
+    background-color: azure;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6vh ;
+    font-size: 1.3rem;
+    border-radius: 12px;
+    padding: 5px;
+}
+.main-add-item .add-item-form-section{
+    display: flex;
+    align-items: center;
+    height: 15%;
+    font-size: 20px;
+    margin-top: 3%;
+}
 
+.add-item-form-section .label-section{
+    width: 150px; 
+    font-size: 1.2rem;
+}
+.main-add-item .button-style{
+    background-color: rgb(227, 59, 115);
+    margin-left: 70%;
+    margin-top: 10% ;
+    border-radius: 12px;
+    width: 100px;
+    height: 30px; 
+    border: white;
+    font-size: medium;
+    color: azure;
+}
 
-@media(min-width: 1300px) {
+@media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
     .index-login{
         width: 30vw;
         height: 22vh; 
         background-color: azure;
         font-size: 2.3rem;
     }
+    .main-add-item{
+        width: 34vw;
+        height: 26vh; 
+        background-color: azure;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        border-radius: 12px;
+        border: 10px;
+        padding: 5px;
+
+    }
+    .main-add-item .add-item-form-section{
+        height: 25%;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .add-item-form-section .label-section{
+        width: 150px; 
+        font-size: 1.4rem;
+    }
+
+    .main-add-item .button-style{
+        margin-left: 75%;
+        margin-top: 3% ;
+        width: 25%;
+    }
+    
     
 }
 
 
-/*if we do .index-page .page-title {....}, it applies the style "page-title" only if its a child inside parent class of "index-page"*/

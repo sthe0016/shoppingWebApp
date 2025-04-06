@@ -29,62 +29,32 @@
         Shopping list main
         </div>
         
-        <div style = "font-size: 20px; 
-        background-color: rgb(227, 59, 115); 
-        border-radius: 10px;
-        height: auto; 
-        padding: 5px;
-        width: auto;
-        ">
+        <div class = "mini-page-title" >
            <a href="./completedItems.html" style="color: azure; text-decoration: solid;">Bill Page</a> 
         </div>
     </div>
 
-    <div style = "width: 600px;
-    height: 200px; 
-    background-color: azure;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto ;
-    font-size: 30px;
-    border-radius: 12px;
-    border: 10px;
-    padding: 5px;">
-    <b>Item to add </b>
+    <div class = "main-add-item">
+        <b>Item to add </b>
 
-        <div style = "font-size: 20px; margin-top: 10px;">
-            <div style="display: flex; align-items: center; height: 50px;">
-            <label for = "itemName" style = "width: 150px; text-align: left;"> item :  </label >  
+        <div class = "add-item-form-section">
+            <label for = "itemName" class = "label-section"> item :  </label >  
             <input  type="text" id="itemName">
             <span id="ItemNameMsg" style = "color: red; font-size: 14px; display: none; margin-left: 10px;">Item name is required</span>
-            </div>
         </div>
-
-        <div style = "font-size: 20px; margin-top: 10px;">
-            <div style="display: flex; align-items: center; height: 50px">
-            <label for = "itemDescription" style = "width: 150px; text-align: left;"> description: </label >
+        
+        <div class = "add-item-form-section">
+            <label for = "itemDescription" class="label-section"> description: </label >
             <input  type="text" id="itemDescription">
-            </div>
         </div>
-
-        <div style = "
-            margin-left: 450px;
-            margin-right: auto;
-            margin-top: 5px ;">
-                <button type = "button" style = " background-color: rgb(227, 59, 115);
-                border-radius: 12px;
-                width: 150px;
-                height: 30px; 
-                border: white;
-                font-size: medium;
-                color: azure;
-                "
+        
+        <button type = "button" class = "button-style" 
                 onclick="return addItem()">
                 <b> Add Item </b>
-            </button>
-        </div>
+        </button>       
+    </div>
 
-        <div id = "itemHeading" style = "margin-top: 100px; 
+    <div id = "itemHeading" style = "margin-top: 100px; 
         width: 600px;
         height: 50px; 
         background-color: azure;
@@ -92,10 +62,8 @@
         text-align: center;
         vertical-align: middle;"> 
             <h4> Items to buy </h4>
-        </div>
-       
-    
     </div>
+    
     <script src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"> </script>
     <script src="../JavaScript/main.js"></script>
 </body>
