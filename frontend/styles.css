@@ -57,8 +57,8 @@ body.common-body{
 }
 
 .main-add-item{
-    width: 400px;
-    height: 200px; 
+    width: 400px; 
+    height: 200px;
     background-color: azure;
     margin-left: auto;
     margin-right: auto;
@@ -84,11 +84,28 @@ body.common-body{
     margin-left: 70%;
     margin-top: 10% ;
     border-radius: 12px;
-    width: 100px;
+    width: 105px;
     height: 30px; 
     border: white;
     font-size: medium;
     color: azure;
+}
+
+.main-items-to-buy{
+    margin-top: 11vh; 
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-items-to-buy .heading-style{
+    display: flex;
+    background-color: azure;
+    height: 40px; 
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
