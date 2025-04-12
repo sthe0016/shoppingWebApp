@@ -39,13 +39,16 @@
 
         <div class = "add-item-form-section">
             <label for = "itemName" class = "label-section"> item :  </label >  
-            <input  type="text" id="itemName">
-            <span id="ItemNameMsg" style = "color: red; font-size: 14px; display: none; margin-left: 10px;">Item name is required</span>
+            <div class = "text-input-error-div-style">
+                <input class = "input-text-style" type="text" id="itemName">
+                <span id="ItemNameMsg" class = "error-msg-style">Item name is required</span>                
+            </div>
+            
         </div>
         
         <div class = "add-item-form-section">
             <label for = "itemDescription" class="label-section"> description: </label >
-            <input  type="text" id="itemDescription">
+            <input  class = "input-text-style" type="text" id="itemDescription">
         </div>
         
         <button type = "button" class = "button-style" 
@@ -57,7 +60,7 @@
     <div id = "itemHeading" class = "main-items-to-buy">
         <div class = "heading-style"> 
             <h4> Items to buy </h4>
-         </div>
+        </div>
     </div>
     
     

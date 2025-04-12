@@ -26,6 +26,25 @@ body.common-body{
 
 }
 
+
+.error-msg-style{
+    color: red; 
+    font-size: 12px; 
+    display: none; 
+    margin-top: 5px;
+}
+
+.text-input-error-div-style{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text-style{
+    border-radius: 5px;
+    height: 20px;
+    border-color: rgb(201, 177, 149);
+}
+
 .index-login{
     width: 400px;
     height: 20vh; 
@@ -108,6 +127,73 @@ body.common-body{
     
 }
 
+.main-items-to-buy .main-item-style{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.main-item-style .item-label-style{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px; 
+    height: 17px; 
+    background-color: azure; 
+    border-radius: 15px; 
+    padding: 10px; 
+    border: solid black; 
+    font-size: large;
+}
+
+.main-item-style .view-button-style{
+    margin-left: 10px;
+    border-radius: 20px; 
+    color: white; 
+    background-color: rgb(243, 243, 243);
+    color: black
+}
+
+.main-item-style .delete-button-style{
+    margin-left: 10px;
+    border-radius: 20px; 
+    color: white;
+    background-color: rgb(199, 62, 62); 
+    color: black;
+}
+
+.main-items-to-buy .input-styles{
+    font-size: 20px; 
+    margin-top: 5vh;
+
+}
+
+.input-styles .label-text-input-styles{
+    display: flex; 
+    flex-direction: row;
+    margin-bottom: 2vh;
+}
+
+.label-styles{
+    width: 100px;
+}
+
+.input-styles .error-input-style{
+    display: flex; 
+    flex-direction: row;
+}
+
+.main-items-to-buy .create-bill-button-style{
+    background-color: rgb(227, 59, 115);
+    border-radius: 1rem;
+    width: 110px;
+    height: 30px; 
+    border: white;
+    font-size: medium;
+    color: white;
+    margin-top: 2vh;
+    margin-left: 300px;  
+}
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
     .index-login{
         width: 30vw;
@@ -116,16 +202,9 @@ body.common-body{
         font-size: 2.3rem;
     }
     .main-add-item{
-        width: 34vw;
+        width: 38vw;
         height: 26vh; 
-        background-color: azure;
-        margin-left: auto;
-        margin-right: auto;
         font-size: 30px;
-        border-radius: 12px;
-        border: 10px;
-        padding: 5px;
-
     }
     .main-add-item .add-item-form-section{
         height: 25%;
@@ -143,8 +222,24 @@ body.common-body{
         margin-top: 3% ;
         width: 25%;
     }
-    
-    
+    .main-items-to-buy{
+        width: 34vw;
+    }
+    .main-item-style .item-label-style{
+        width: 34vw; 
+        height: 25px;
+    }
+    .text-input-error-div-style{
+        flex-direction: row;
+    }
+    .error-msg-style{
+        margin-top: 0px;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    .main-items-to-buy .create-bill-button-style{
+        margin-left: 27.5vw;  
+    }
 }
 
 
