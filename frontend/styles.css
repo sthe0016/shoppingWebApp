@@ -211,7 +211,7 @@ body.common-body{
     font-size: medium;
     color: white;
     margin-top: 2vh;
-    margin-left: 300px;  
+    margin-left: 280px;  
 }
 
 .view-heading{
@@ -328,10 +328,10 @@ body.common-body{
 
 .completed-bills .completed-delete-button-style{
     margin-top: 30px;
-    margin-left: 65%;
+    margin-left: 63%;
     background-color: rgb(227, 59, 115);
     border-radius: 12px;
-    width: 110px;
+    width: 120px;
     height: 30px; 
     border: white;
     font-size: medium;
