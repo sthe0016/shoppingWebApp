@@ -19,10 +19,13 @@ async function showItem() {
 async function editItem(){
     try{
         let itemId = localStorage.getItem("itemID")
-        let newUser = localStorage.getItem("userName")
+        let userNameValue = document.getElementById("userName").value
         let itemNameValue = document.getElementById("itemName").value
         let itemDescriptionValue = document.getElementById("itemDescription").value
         let errorMsg = document.getElementById("ItemNameMsg")
+        if (userNameValue === ""){
+            userNameValue = localStorage.getItem("userName")
+        }
         if (itemNameValue === ""){
             errorMsg.style.display = "block";    // This shows the error message   
         }
@@ -32,7 +35,7 @@ async function editItem(){
                 await axios.patch(`${BASE_URL}/${itemId}`,
                     {
                         "name": itemNameValue,
-                        "user": newUser
+                        "user": userNameValue
                     }
                 )
             }
@@ -41,7 +44,7 @@ async function editItem(){
                     {
                         "name": itemNameValue,
                         "description": itemDescriptionValue,
-                        "user": newUser
+                        "user": userNameValue
                     }
                 )
             }

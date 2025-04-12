@@ -103,7 +103,7 @@ body.common-body{
     margin-left: 70%;
     margin-top: 10% ;
     border-radius: 12px;
-    width: 105px;
+    width: 120px;
     height: 30px; 
     border: white;
     font-size: medium;
@@ -186,7 +186,7 @@ body.common-body{
 .main-items-to-buy .create-bill-button-style{
     background-color: rgb(227, 59, 115);
     border-radius: 1rem;
-    width: 110px;
+    width: 120px;
     height: 30px; 
     border: white;
     font-size: medium;
@@ -194,7 +194,52 @@ body.common-body{
     margin-top: 2vh;
     margin-left: 300px;  
 }
+
+.view-heading{
+    color: azure; 
+    font-size: large; 
+    background-color: rgb(227, 59, 115); 
+    border-radius: 10px; 
+    padding: 5px;
+    width: auto;
+    text-align: center;
+}
+
+.view-info-section{
+    margin-top: 10vh; 
+    background-color: white; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px; 
+    padding: 5px;
+    width: 400px;
+    height: 400px
+}
+
+.view-info-section .individual-info-section-style{
+    display: flex;
+    align-items:center; 
+    height: 50px; 
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.view-info-section .button-style{
+    margin-left: 65%;
+    margin-top: 130px;
+    background-color: rgb(227, 59, 115);
+    border-radius: 12px;
+    width: 115px;
+    height: 30px; 
+    border: white;
+    font-size: medium;
+    color: azure;
+}
+
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
+    .label-styles{
+        width: 150px;
+    }
     .index-login{
         width: 30vw;
         height: 22vh; 
@@ -239,6 +284,25 @@ body.common-body{
     }
     .main-items-to-buy .create-bill-button-style{
         margin-left: 27.5vw;  
+    }
+    .view-heading{
+        font-size: xx-large;
+    }
+
+    .view-info-section{
+        width: 32vw;
+        height: 40vh; 
+    }
+
+    .view-info-section .individual-info-section-style{
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+    .view-info-section .button-style{
+        margin-left: 23.2vw;
+        margin-top: 5vh;
+        width: 120px;
     }
 }
 
