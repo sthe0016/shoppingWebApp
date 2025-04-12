@@ -78,16 +78,24 @@ async function showCompleted(){
 async function deleteBill(){
     let checkboxes = document.getElementsByName("bills")
     let anyChecked = false
+    let checkedIDs = []
     for (let checkbox of checkboxes){
         if(checkbox.checked){
             anyChecked = true 
-            setID = checkbox.value
-            await axios.delete(`${BASE_URL}/completed/${setID}`)
-            location.reload()
+            checkedIDs.push(checkbox.value)
         }
     }
+    if(anyChecked){
+        for (let id of checkedIDs){
+            await axios.delete(`${BASE_URL}/completed/${id}`)
+        }
+        location.reload()
+    }
+    else{
+        alert("Please select bill(s) to delete")
+    }
     
-}
+}   
 
 window.onload = function () {
     showCompleted()
