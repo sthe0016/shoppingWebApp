@@ -15,7 +15,7 @@ body.common-body{
     text-align: center;
 }
 
-.mini-page-title{
+.bill-page-title-button{
     font-size: 1.2rem;
     color: azure;
     background-color: rgb(227, 59, 115);
@@ -26,12 +26,30 @@ body.common-body{
 
 }
 
+.main-page-title-button{
+    font-size: 20px; 
+    margin-top: 20px;
+    background-color: rgb(227, 59, 115); 
+    border-radius: 10px;
+    height: auto; 
+    padding: 5px;
+    width: 110px;
+}
+
 
 .error-msg-style{
     color: red; 
     font-size: 12px; 
     display: none; 
     margin-top: 5px;
+}
+
+.bold-style{
+    font-weight: bold;
+}
+
+.take-full-width{
+    width: 100%;
 }
 
 .text-input-error-div-style{
@@ -76,7 +94,7 @@ body.common-body{
 }
 
 .main-add-item{
-    width: 400px; 
+    width: 395px; 
     height: 200px;
     background-color: azure;
     margin-left: auto;
@@ -100,7 +118,7 @@ body.common-body{
 }
 .main-add-item .button-style{
     background-color: rgb(227, 59, 115);
-    margin-left: 70%;
+    margin-left: 65%;
     margin-top: 10% ;
     border-radius: 12px;
     width: 120px;
@@ -172,6 +190,7 @@ body.common-body{
     display: flex; 
     flex-direction: row;
     margin-bottom: 2vh;
+    font-weight: bold;
 }
 
 .label-styles{
@@ -234,6 +253,90 @@ body.common-body{
     border: white;
     font-size: medium;
     color: azure;
+}
+
+.completedItems-heading{
+    color: azure; 
+    font-size: 25px; 
+    background-color: rgb(227, 59, 115); 
+    border-radius: 10px; 
+    padding: 5px;
+    width: auto;
+    text-align: center;
+}
+
+.completedItems-sub-heading{
+    margin-top: 70px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 395px;
+    height: 50px; 
+    background-color: azure;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.completed-bills{
+    margin-left: auto;
+    margin-right: auto;
+    width: 380px
+}
+.completed-bills .completedItems-bill-style{
+    display: flex;
+    margin-top: 10px;
+}
+
+.completedItems-bill-style .label-style{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto; 
+    background-color: azure; 
+    border-radius: 15px; 
+    padding: 10px; 
+    border: solid black; 
+    display: flex; 
+    font-size: large;
+}
+
+.completedItems-bill-style .bill-items-style{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.completedItems-bill-style .price-user-style{
+    display: flex; 
+    justify-content: 
+    space-between; 
+    width: 100%; 
+    margin-top: 30px;
+
+}
+
+.completedItems-bill-style .checkbox-style{
+    display: flex; 
+    align-items: center; 
+    height: 100%; 
+    margin-left: auto
+
+}
+
+.completed-bills .completed-delete-button-style{
+    margin-top: 30px;
+    margin-left: 65%;
+    background-color: rgb(227, 59, 115);
+    border-radius: 12px;
+    width: 110px;
+    height: 30px; 
+    border: white;
+    font-size: medium;
+    color: white;
+
 }
 
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
@@ -303,6 +406,20 @@ body.common-body{
         margin-left: 23.2vw;
         margin-top: 5vh;
         width: 120px;
+    }
+    .completedItems-heading{
+        font-size: 30px;
+    }
+    .completedItems-sub-heading{
+        width: 34vw;
+    }
+    .completed-bills{
+        width: 34vw;
+    }
+
+    .completed-bills .completed-delete-button-style{
+        margin-left: 26.5vw;  
+    
     }
 }
 

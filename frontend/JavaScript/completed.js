@@ -24,32 +24,16 @@ async function showCompleted(){
             items = completedSet.items
             id = completedSet._id
             user = completedSet.user
-            divStr = `<div style = " display: flex;
-            margin-top: 10px;">
+            divStr = `<div class = "completedItems-bill-style">
 
-            <label style="width: 400px; 
-            margin-left: auto;
-            margin-right: auto;
-            height: auto; 
-            background-color: azure; 
-            border-radius: 15px; 
-            padding: 10px; 
-            border: 2px solid black; 
-            display: flex; 
-            align-items: flex-start;
-            font-size: large;">
+            <label class = "label-style">
 
-            <div style="display: flex; 
-                flex-direction: column; 
-                margin-top: 5px;
+            <div style="
                 width: 100%;">
 
-                <span style="font-weight: bold;">${date}</span>
+                <span class="bold-style">${date}</span>
 
-                <div style = "align-items: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;"
+                <div class = "bill-items-style"
                 >`
             items.forEach((item) =>{
                 divStr =divStr.concat(`<span >${item.name}</span>`)
@@ -57,16 +41,15 @@ async function showCompleted(){
             })
             divStr = divStr.concat(`</div>
                 
-                <div style="display: flex; justify-content: space-between; width: 100%; margin-top: 30px;">
-                    <span style="font-weight: bold;">Price: ${price}</span>
-                    <span style="font-weight: bold;">${user}</span>
+                <div class = "price-user-style">
+                    <span class="bold-style">Price: ${price}</span>
+                    <span class="bold-style">${user}</span>
                 </div>
 
             </div>
             
-            <div style="display: flex; align-items: center; height: 100%;">
-            <input style = "margin-left: auto" type = "checkbox" name = "bills" value = ${id} />  </input>
-            </div>
+            
+            <input class = "checkbox-style" type = "checkbox" name = "bills" value = ${id} />  </input>
 
             </label>
             </div>
@@ -77,20 +60,11 @@ async function showCompleted(){
     );
     if(allcompleted.length > 0){
         const billButton = document.createElement('div')
-            billButton.innerHTML = `<div style = "margin-top: 30px;
-            margin-left: 980px;">
-                <button type = "button" style = " background-color: rgb(227, 59, 115);
-                    border-radius: 12px;
-                    width: 120px;
-                    height: 30px; 
-                    border: white;
-                    font-size: medium;
-                    color: white;
-                    "
+            billButton.innerHTML = `
+                <button type = "button" class = "completed-delete-button-style"
                     onclick="return deleteBill()">
                     <b> Delete bills </b>
-                </button>
-            </div>`
+                </button>`
         completedBillsDisplay.appendChild(billButton)
     }
 

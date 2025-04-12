@@ -8,44 +8,20 @@
 
 </head>
 <body class = 'common-body'>
-    <div style = " 
-    color: azure; 
-    font-size: 30px; 
-    background-color: rgb(227, 59, 115); 
-    border-radius: 10px; 
-    padding: 5px;
-    width: auto;
-    text-align: center;">
+    <div class = "completedItems-heading">
     Bill Sheet
     </div>
 
-    <div style = "font-size: 20px; 
-        margin-top: 20px;
-        background-color: rgb(227, 59, 115); 
-        border-radius: 10px;
-        height: auto; 
-        padding: 5px;
-        width: 90px;
-        ">
+    <div class = "main-page-title-button">
            <a href="./main.html" style="color: azure; text-decoration: solid;">Main Page</a> 
-        </div>
+    </div>
 
-    <div id = "completedBills" style = "margin-top: 70px; 
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    width: 600px;
-    height: 50px; 
-    background-color: azure;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    "> 
+    <div id = "completedBills" class = "completedItems-sub-heading"> 
             <h2> Completed Bills </h2>
     </div>
     
-    <div id = "completedBillsDisplay" style = "display: flex; flex-direction: column;"> </div>
+    <div id = "completedBillsDisplay" class = "completed-bills">
+    </div>
     
 
     <script src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"> </script>
