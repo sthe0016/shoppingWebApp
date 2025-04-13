@@ -20,6 +20,12 @@
 
 </head>
 <body class = 'common-body'>
+
+    <div class = "loader loader-hidden"> <!-- Initially we have both the loader class and the loader hidden class. 
+        As long as the loader-hidden class is in the div tag, the loading animation will be hidden
+        We remove this loader-hidden class in the Javascript file when we want the animation to come on -->
+    </div>
+
     <div style = "color: azure; 
     display: flex;
     width: 100%;
@@ -51,9 +57,12 @@
             <input  class = "input-text-style" type="text" id="itemDescription">
         </div>
         
-        <button type = "button" class = "button-style" 
+        <button id = "addItemBtn" type = "button" class = "button-style" 
                 onclick="return addItem()">
-                <b> Add Item </b>
+                <span class="spinner tiny-spinner tiny-spinner-hidden"></span> <!-- Initially we have both the tiny-spinner class and the tiny-spinner-hidden class. 
+                As long as the tiny-spinner-hidden class is in the div tag, the loading animation will be hidden
+                We remove this tiny-spinner-hidden class in the Javascript file when we want the animation to come on -->
+                <span class="btn-text">Add Item</span>
         </button>       
     </div>
 

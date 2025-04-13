@@ -36,6 +36,66 @@ body.common-body{
     width: 110px;
 }
 
+.loader{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke ;
+    transition: opacity 0.75s, visibility 0.75s;  /* means when the opacity changes, apply a smooth transition lasting 0.75 seconds*/
+}
+
+.loader-hidden{  /* This class will be added to the div tag to hide the loading screen  */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after{  /* A pseudo element. It creates a "virtual child element" inside the .loader without needing to write extra HTML*/
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #7449f9;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;  /*We have created an animation called "loading". This applies the animation to the loader::after element
+    The duration of 1 spin is 0.75s and the ease describes the speed curve (start slow and speeds up and then slows down). 
+    The infinite means continue forever. 
+    */
+}
+/*keyframes is a CSS rule used to define a custom animation. In our case it is the loading animation.*/
+@keyframes loading {
+    from{
+        transform: rotate(0turn); /*start from 0 degrees*/
+    }
+    to{
+        transform: rotate(1turn); /*finish at 360 degrees*/
+    }
+    
+}
+
+.tiny-spinner {
+    width: 16px;
+    height: 16px;
+    border: 3px solid #eee;
+    border-top-color: #f04e88;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: spin 0.6s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+.tiny-spinner-hidden {
+    display: none;
+  }
 
 .error-msg-style{
     color: red; 
@@ -126,6 +186,14 @@ body.common-body{
     border: white;
     font-size: medium;
     color: azure;
+    font-weight: bold;
+
+    display: flex;                   /* NEW: To align text + spinner */
+    align-items: center;
+    justify-content: center;
+    gap: 3px;                        /* NEW: spacing between spinner and text */
+    padding: 0 10px;
+    overflow: hidden;
 }
 
 .main-items-to-buy{

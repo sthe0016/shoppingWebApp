@@ -1,5 +1,15 @@
 BASE_URL = "https://shopping-web-server.vercel.app/api/v1/items"
 
+function showLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.remove('loader-hidden')  // remove the loader-hidden class so only the loader class is visible
+}
+
+function hideLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.add('loader-hidden')  // adds the loader-hidden class so the visibility is set to hidden
+}
+
 async function showCompleted(){
     completedBillsDisplay = document.getElementById("completedBillsDisplay")
     try{
@@ -9,7 +19,9 @@ async function showCompleted(){
         let items = []
         let id = ''
         let user = ''
+        showLoader()
         const {data : {allcompleted}} = await axios.get(`${BASE_URL}/completed`)
+        hideLoader()
         allcompleted.forEach(
             (completedSet) => {
             const newDiv = document.createElement('div');
@@ -86,9 +98,11 @@ async function deleteBill(){
         }
     }
     if(anyChecked){
+        showLoader()
         for (let id of checkedIDs){
             await axios.delete(`${BASE_URL}/completed/${id}`)
         }
+        hideLoader()
         location.reload()
     }
     else{

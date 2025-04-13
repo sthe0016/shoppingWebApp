@@ -1,5 +1,51 @@
 BASE_URL = "https://shopping-web-server.vercel.app/api/v1/items"
 
+
+function showLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.remove('loader-hidden')  // remove the loader-hidden class so only the loader class is visible
+}
+
+function hideLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.add('loader-hidden')  // adds the loader-hidden class so the visibility is set to hidden
+}
+
+function showAddButtonLoader(){
+    const addBtn = document.getElementById("addItemBtn");
+    const spinner = addBtn.querySelector(".tiny-spinner");
+    const btnText = addBtn.querySelector(".btn-text");
+    addBtn.disabled = true
+    spinner.classList.remove('tiny-spinner-hidden')
+    btnText.textContent = "Adding..."
+
+}
+
+function hideAddButtonLoader(){
+    const addBtn = document.getElementById("addItemBtn");
+    const spinner = addBtn.querySelector(".tiny-spinner");
+    const btnText = addBtn.querySelector(".btn-text");
+    addBtn.disabled = false 
+    spinner.classList.add('tiny-spinner-hidden')
+    btnText.textContent = "Add Item"
+    
+}
+
+function showDeleteButtonLoader(deleteBtn){  // We have to pass deleteBtn as an argument since there are multiple delete buttons. We can't refer by a common id. if we do, it will apply the animation to the first delete button the id returns
+    const spinner = deleteBtn.querySelector(".tiny-spinner");
+    const btnText = deleteBtn.querySelector(".btn-text");
+    deleteBtn.disabled = true
+    spinner.classList.remove('tiny-spinner-hidden')
+    btnText.textContent = ""
+}
+function hideDeleteButtonLoader(deleteBtn){  // We have to pass deleteBtn as an argument since there are multiple delete buttons. We can't refer by a common id. if we do, it will apply the animation to the first delete button the id returns
+    const spinner = deleteBtn.querySelector(".tiny-spinner");
+    const btnText = deleteBtn.querySelector(".btn-text");
+    deleteBtn.disabled = false 
+    spinner.classList.add('tiny-spinner-hidden')
+    btnText.textContent = "delete"
+}
+
 const addItem = async () => {
     try {
         let itemNameValue = document.getElementById("itemName").value
@@ -12,15 +58,18 @@ const addItem = async () => {
         }
         else{
             if (itemDescriptionValue === ""){
+                showAddButtonLoader()
                 await axios.post(`${BASE_URL}`, 
                     {
                         "name": itemNameValue,
                         "user": user                
                     }
                 )
+                hideAddButtonLoader()
 
             }
             else{
+                showAddButtonLoader()
                 await axios.post(`${BASE_URL}`, 
                     {
                         "name": itemNameValue,
@@ -28,6 +77,7 @@ const addItem = async () => {
                         "user": user                
                     }
                 )
+                hideAddButtonLoader()
             }
             location.reload();
         }
@@ -43,7 +93,9 @@ async function showItems(){
     let itemsExist = false
 
     try {
+        showLoader()
         const {data: {allItems}} = await axios.get(`${BASE_URL}`)
+        hideLoader()
         if (allItems.length > 0){
             itemsExist = true 
         } else {
@@ -52,52 +104,59 @@ async function showItems(){
         allItems.forEach((item) => {
             const {_id, name} = item
             const newDiv = document.createElement('div');
-            newDiv.innerHTML = 
+            newDiv.innerHTML = // includes a view button and also a delete button with the loading animation functionality
             `
             <div class="main-item-style">
 
             <label class = "item-label-style">
             ${name}
-            <input type = "checkbox" name = "completed" value = ${_id} />  </input>
+            <input type = "checkbox" name = "completed" value = ${_id} data-name="${name}"/>  </input>
             </label>
     
-            <button class = "view-button-style" data-id = ${_id}> view </button>
-            <button class = "delete-button-style"  data-id = ${_id}> delete</button>
+            <button class = "view-button-style" data-id = ${_id}> view </button>   
+
+            <button class = "delete-button-style"  data-id = ${_id}>  
+            <span class="spinner tiny-spinner tiny-spinner-hidden"></span> 
+            <span class="btn-text">delete</span>
+            <!-- Initially we have both the tiny-spinner class and the tiny-spinner-hidden class. 
+            As long as the tiny-spinner-hidden class is in the div tag, the loading animation will be hidden
+            We remove this tiny-spinner-hidden class in the Javascript file when we want the animation to come on -->
+            </button>
 
             </div>
         `
         displayItems.appendChild(newDiv)
         }
-    )
-    if (itemsExist){  // This section of html displays the option to type the name of the User buying the items and the amount of the total bill.
-        const twoTextField = document.createElement('div')
-        twoTextField.innerHTML = `
-        <div class = "input-styles">
-            <div class = "label-text-input-styles">
-                <label class = "label-styles" for = "itemName" > User:  </label >  
-                <div class = "text-input-error-div-style">
-                    <input  class = "input-text-style" type="text" id="billUser">
-                    <span id="billUserMsg"; class = "error-msg-style">Username is required to create bill</span>
+        )
+        if (itemsExist){  // This section of html displays the option to type the name of the User buying the items and the amount of the total bill.
+            const twoTextField = document.createElement('div')
+            twoTextField.innerHTML = `
+            <div class = "input-styles">
+                <div class = "label-text-input-styles">
+                    <label class = "label-styles" for = "itemName" > User:  </label >  
+                    <div class = "text-input-error-div-style">
+                        <input  class = "input-text-style" type="text" id="billUser">
+                        <span id="billUserMsg"; class = "error-msg-style">Username is required to create bill</span>
+                    </div>
+                </div>
+
+                <div class = "label-text-input-styles">
+                    <label class = "label-styles" for = "itemDescription" > Bill Price: </label >
+                    <div class = "text-input-error-div-style"> 
+                        <input class = "input-text-style" type="text" id="billPrice">
+                        <span id="billPriceMsg" class = "error-msg-style">Please provide bill price in digits</span>
+                    </div> 
                 </div>
             </div>
-
-            <div class = "label-text-input-styles">
-                <label class = "label-styles" for = "itemDescription" > Bill Price: </label >
-                <div class = "text-input-error-div-style"> 
-                    <input class = "input-text-style" type="text" id="billPrice">
-                    <span id="billPriceMsg" class = "error-msg-style">Please provide bill price in digits</span>
-                </div> 
-            </div>
-        </div>
-        `
-        displayItems.appendChild(twoTextField)    
-        const billButton = document.createElement('div')
-            billButton.innerHTML = `<button type = "button" class = "create-bill-button-style"
-                    onclick="return createBill()">
-                    <b> Create bill </b>
-                </button>`
-        displayItems.appendChild(billButton)
-    }
+            `
+            displayItems.appendChild(twoTextField)    
+            const billButton = document.createElement('div')
+                billButton.innerHTML = `<button type = "button" class = "create-bill-button-style"
+                        onclick="return createBill()">
+                        <b> Create bill </b>
+                    </button>`
+            displayItems.appendChild(billButton)
+        }
     
     }
     catch (error) {
@@ -118,17 +177,27 @@ async function deleteItem(itemID){
 
 // all the view and delete buttons are added as children to the div section with id itemHeading. Thus, if we add an event listener to this parent element. It will apply to the child elements too 
 document.getElementById("itemHeading").addEventListener('click', async (e) => { 
+    // "e" is the object that contains information about the event that just happened. 
+    console.log("something was clicked:", e.target); //  Test if anything is being caught
     if (e.target.classList.contains('view-button-style')){ // functionality for the edit button
         id = e.target.dataset.id  // stored in the data element of the button
         console.log(`view button pressed and data id is ${e.target.dataset.id}`)
         window.localStorage.setItem("itemID", id)
         window.location = "view.html"      
     }
-    else if (e.target.classList.contains('delete-button-style')){ // functionality for the delete button
-        id = e.target.dataset.id  // stored in the data element of the button
+    
+    else if (e.target.closest('.delete-button-style')){
+        // Note: we use closest instead of classList.contains, because the classList.contains will return false. 
+        // This is because, the delete is actually wrapped in a span with class "btn-text". We use the .closest functionality 
+        // to find the parent class. 
+        // functionality for the delete button
+        const deleteBtn = e.target.closest('.delete-button-style');
+        id = deleteBtn.dataset.id  // stored in the data element of the button
         console.log(`delete button pressed and data id is ${e.target.dataset.id}`)
         try{
-            await deleteItem(id);  // wait till this has finished executing. 
+            showDeleteButtonLoader(deleteBtn)
+            await deleteItem(id);  // await keyword indicates to wait till this has finished executing to execute next line.
+            hideDeleteButtonLoader(deleteBtn)
             location.reload();  // only reload the page once the item is deleted. 
         }
         catch(e){
@@ -155,7 +224,7 @@ async function createBill() {
             if (checkbox.checked){
                 anyChecked = true
                 itemID = checkbox.value                 
-                const {data: {item: {name}}} = await axios.get(`${BASE_URL}/${itemID}`)
+                const name = checkbox.dataset.name
                 completedItemsArr.push({"name": name}) 
                 completedItemsIDs.push(itemID)  // remember the item id's that have been selected 
             }
@@ -178,6 +247,7 @@ async function createBill() {
                 errorMsgBill.style.display = "none"   // This hides the error message 
                 billPriceValue = "Not specified"   // indicates the price of the bill was not specified 
             }
+            showLoader()
             completedItemsIDs.forEach((id) => deleteItem(id))   // Delete all the items that have been selected
             const date = new Date();
             const dayStr = date.getDate()
@@ -192,6 +262,7 @@ async function createBill() {
                     "price": billPriceValue
                 }
             )
+            hideLoader()
             location.reload()
             return
 

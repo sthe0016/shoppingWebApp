@@ -1,12 +1,25 @@
 BASE_URL = "https://shopping-web-server.vercel.app/api/v1/items"
 
+
+function showLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.remove('loader-hidden')  // remove the loader-hidden class so only the loader class is visible
+}
+
+function hideLoader(){
+    let loadingElement = document.querySelector('.loader')
+    loadingElement.classList.add('loader-hidden')  // adds the loader-hidden class so the visibility is set to hidden
+}
+
 async function showItem() {
     try{
         itemId = localStorage.getItem("itemID")
         userName = document.getElementById("userName")
         itemName = document.getElementById("itemName")
         itemDescription = document.getElementById("itemDescription")
+        showLoader()
         const {data: {item}} = await axios.get(`${BASE_URL}/${itemId}`)
+        hideLoader()
         userName.value = item.user
         itemName.value = item.name
         itemDescription.value = item.description
