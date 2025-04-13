@@ -22,7 +22,13 @@ async function showItem() {
         hideLoader()
         userName.value = item.user
         itemName.value = item.name
-        itemDescription.value = item.description
+        if (item.description === undefined){
+            itemDescription.value = ""
+        }
+        else{
+            itemDescription.value =  item.description
+        }
+        
     }
     catch (error) {
         console.log(error)
