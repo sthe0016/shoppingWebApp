@@ -11,7 +11,7 @@ body.common-body{
     background-color: rgb(227, 59, 115);
     border-radius: 1rem; 
     padding: 0.4rem 0.8rem; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
-    width: fit-content;
+    width: 250px;
     text-align: center;
 }
 
@@ -21,7 +21,7 @@ body.common-body{
     background-color: rgb(227, 59, 115);
     border-radius: 1rem; 
     padding: 0.2rem 0.8rem; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
-    width: fit-content;
+    width: 80px;
     text-align: center;
 
 }
