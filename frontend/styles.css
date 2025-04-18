@@ -408,6 +408,13 @@ body.common-body{
 
 }
 
+
+@media(max-width: 450px){ /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes <= 450px */
+    .index-login{
+        width: 350px;
+    }
+}
+
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
     .label-styles{
         width: 150px;
