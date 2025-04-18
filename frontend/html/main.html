@@ -57,13 +57,18 @@
             <input  class = "input-text-style" type="text" id="itemDescription">
         </div>
         
-        <button id = "addItemBtn" type = "button" class = "button-style" 
+        <div class = "add-item-button-position">
+            <button id = "addItemBtn" type = "button" class = "button-style" 
                 onclick="return addItem()">
                 <span class="spinner tiny-spinner tiny-spinner-hidden"></span> <!-- Initially we have both the tiny-spinner class and the tiny-spinner-hidden class. 
                 As long as the tiny-spinner-hidden class is in the div tag, the loading animation will be hidden
                 We remove this tiny-spinner-hidden class in the Javascript file when we want the animation to come on -->
                 <span class="btn-text">Add Item</span>
-        </button>       
+        </button> 
+
+
+        </div>
+              
     </div>
 
     <div id = "itemHeading" class = "main-items-to-buy">

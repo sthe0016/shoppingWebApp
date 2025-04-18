@@ -28,6 +28,7 @@ body.common-body{
 
 .main-page-title-button{
     font-size: 20px; 
+    color: azure;
     text-decoration: underline;
     margin-top: 20px;
     background-color: rgb(227, 59, 115); 
@@ -179,8 +180,6 @@ body.common-body{
 }
 .main-add-item .button-style{
     background-color: rgb(227, 59, 115);
-    margin-left: 65%;
-    margin-top: 10% ;
     border-radius: 12px;
     width: 120px;
     height: 30px; 
@@ -195,6 +194,11 @@ body.common-body{
     gap: 3px;                        /* NEW: spacing between spinner and text */
     padding: 0 10px;
     overflow: hidden;
+}
+
+.main-add-item .add-item-button-position{
+    margin-left: 65%;
+    margin-top: 12%;
 }
 
 .main-items-to-buy{
@@ -413,6 +417,83 @@ body.common-body{
     .index-login{
         width: 350px;
     }
+
+    .page-title{
+        font-size: 18px;
+        width: 150px;
+    }
+
+    .bill-page-title-button{
+        font-size: 16px;
+        width: 75px;
+        text-align: center; 
+    }
+
+    .main-add-item{
+        width: 320px;
+        font-size: 25px;
+    }
+    .main-add-item .button-style{
+        margin-left: 60%;
+    }
+
+    .main-add-item .add-item-form-section{
+        height: 20%;
+        font-size: 16px;
+    }
+
+    .add-item-form-section .label-section{
+        width: 110px; 
+        font-size: 1rem;
+    }
+
+    .input-text-style{
+        width: 150px;
+    }
+    
+    .main-add-item .add-item-button-position{
+        margin-left: 0%;
+        margin-top: 12%;
+    }
+
+    .main-items-to-buy{
+        width: 320px;
+    }
+
+    .input-styles .label-text-input-styles{
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    .main-items-to-buy .create-bill-button-style{
+        margin-left: 63%;
+    }
+
+    .completedItems-sub-heading{
+        width: 320px;
+        height: 50px; 
+    }
+
+    .completed-bills{
+        width: 320px;
+    }
+
+    .completed-bills .completed-delete-button-style{
+        margin-left: 200px;  
+        width: 110px;
+    
+    }
+
+    .view-info-section{
+        width: 320px
+    }
+
+    .view-info-section .button-style{
+        margin-left: 200px;
+        margin-top: 125px;
+        width: 115px;
+    }
+    
 }
 
 @media(min-width: 1300px) { /* media query to adjust the contents of the page depending on the screen size. The following code only applies to screen width sizes >= 1300px */
