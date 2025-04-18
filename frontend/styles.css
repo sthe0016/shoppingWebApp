@@ -17,6 +17,7 @@ body.common-body{
 
 .bill-page-title-button{
     font-size: 20px;
+    text-decoration: underline;
     color: azure;
     background-color: rgb(227, 59, 115);
     border-radius: 15px; 
@@ -27,6 +28,7 @@ body.common-body{
 
 .main-page-title-button{
     font-size: 20px; 
+    text-decoration: underline;
     margin-top: 20px;
     background-color: rgb(227, 59, 115); 
     border-radius: 10px;
