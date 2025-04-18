@@ -6,7 +6,7 @@ body.common-body{
     font-family: Roboto;
 }
 .page-title{  
-    font-size: 1.85rem;
+    font-size: 25px;
     color: azure;
     background-color: rgb(227, 59, 115);
     border-radius: 1rem; 
@@ -16,7 +16,7 @@ body.common-body{
 }
 
 .bill-page-title-button{
-    font-size: 1.2rem;
+    font-size: 20px;
     color: azure;
     background-color: rgb(227, 59, 115);
     border-radius: 1rem; 
