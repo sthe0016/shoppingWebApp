@@ -522,13 +522,15 @@ body.common-body{
         font-size: 1.4rem;
     }
 
+    .main-add-item .add-item-button-position{
+        margin-left: 29vw;
+        margin-top: 2vh;
+    }
+
     .main-add-item .button-style{
-        margin-left: 75%;
-        margin-top: 3% ;
-        width: 25%;
     }
     .main-items-to-buy{
-        width: 34vw;
+        width: 38vw;
     }
     .main-item-style .item-label-style{
         width: 34vw; 
