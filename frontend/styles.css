@@ -13,7 +13,6 @@ body.common-body{
     padding: 5px; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
     width: 240px;
     text-align: center;
-    margin-right: auto
 }
 
 .bill-page-title-button{
@@ -24,8 +23,6 @@ body.common-body{
     padding: 7px; /* the two "rem" specifies the padding for top/bottom and left/right respectively */
     width: 80px;
     text-align: center; 
-    margin-left: auto;
-
 }
 
 .main-page-title-button{
