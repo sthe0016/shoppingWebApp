@@ -10,7 +10,7 @@ function hideLoader(){
     loadingElement.classList.add('loader-hidden')  // adds the loader-hidden class so the visibility is set to hidden
 }
 
-async function showCompleted(){
+async function showCompleted(){ // Declaring it as a async function means we are running it in a different thread (multi-tasking)
     completedBillsDisplay = document.getElementById("completedBillsDisplay")
     try{
         let divStr = ''
@@ -20,7 +20,7 @@ async function showCompleted(){
         let id = ''
         let user = ''
         showLoader()
-        const {data : {allcompleted}} = await axios.get(`${BASE_URL}/completed`)
+        const {data : {allcompleted}} = await axios.get(`${BASE_URL}/completed`)  // await is used to tell the the function to wait till this line is completed to run the next line. This is necessary since it is an asynchronous line. 
         hideLoader()
         allcompleted.forEach(
             (completedSet) => {

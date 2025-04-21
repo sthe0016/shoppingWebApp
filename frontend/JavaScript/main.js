@@ -46,8 +46,9 @@ function hideDeleteButtonLoader(deleteBtn){  // We have to pass deleteBtn as an 
     btnText.textContent = "delete"
 }
 
-const addItem = async () => {
+const addItem = async () => { // Declaring it as a async function means we are running it in a different thread (multi-tasking)
     try {
+        //Note: await keyword is used to tell the the function to wait till this line is completed to run the next line. This is necessary since it is an asynchronous line. 
         let itemNameValue = document.getElementById("itemName").value
         let itemDescriptionValue = document.getElementById("itemDescription").value
         let errorMsg = document.getElementById("ItemNameMsg")
@@ -87,8 +88,8 @@ const addItem = async () => {
     }
 }
 
-async function showItems(){
-
+async function showItems(){  // Declaring it as a async function means we are running it in a different thread (multi-tasking)
+    //Note: await keyword is used to tell the the function to wait till this line is completed to run the next line. This is necessary since it is an asynchronous line. 
     let displayItems = document.getElementById("itemHeading")
     let itemsExist = false
 
@@ -166,7 +167,8 @@ async function showItems(){
 
 }
 
-async function deleteItem(itemID){
+async function deleteItem(itemID){  // Declaring it as a async function means we are running it in a different thread (multi-tasking)
+    //Note: await keyword is used to tell the the function to wait till this line is completed to run the next line. This is necessary since it is an asynchronous line. 
     try{
         await axios.delete(`${BASE_URL}/${itemID}`)
     }
@@ -208,7 +210,8 @@ document.getElementById("itemHeading").addEventListener('click', async (e) => {
 }
 )
 
-async function createBill() {
+async function createBill() { // Declaring it as a async function means we are running it in a different thread (multi-tasking)
+    //Note: await keyword is used to tell the the function to wait till this line is completed to run the next line. This is necessary since it is an asynchronous line. 
     try
     {
         billUserValue = document.getElementById("billUser").value
