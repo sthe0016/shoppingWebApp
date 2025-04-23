@@ -9,7 +9,7 @@ const itemScehma = new mongoose.Schema({
         type: String,
         required: [true, "must provide a name"],  // indicates that this attribute is necessary for the database to save information
         trim: true,  // removes extra whitespace 
-        maxlength: [20, "name cannot be more than 20 characters"],
+        maxlength: [40, "name cannot be more than 20 characters"],
         minlength: [0, "name cannot be empty"]
 
     }
@@ -23,7 +23,7 @@ const itemScehma = new mongoose.Schema({
         type: String,
         required: [true, "must provide a name"],  // indicates that this attribute is necessary for the database to save information
         trim: true,  // removes extra whitespace 
-        maxlength: [20, "name cannot be more than 20 characters"],
+        maxlength: [40, "name cannot be more than 20 characters"],
         minlength: [0, "name cannot be empty"]
     }
 
